@@ -15,11 +15,6 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Tian Kitchen",
-  icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
-  },
   description: "A kitchen for Tian & Law",
 };
 
@@ -33,8 +28,17 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Navbar />
-        {children}
+        <nav>
+          <div className="max-w-6xl w-full">
+            <Navbar />
+          </div>
+        </nav>
+
+        <main className="flex flex-col items-center border-b">
+          <div className="max-w-6xl w-full">
+            {children}
+          </div>
+        </main>
       </body>
     </html>
   );
